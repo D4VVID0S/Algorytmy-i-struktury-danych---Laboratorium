@@ -1,0 +1,91 @@
+a)
+zewn. pętla: n/2+1
+wewn. pętla: n/2
+zewn. pętla + (zewn. pętla -1)*(wewn. pętla)
+(n/2+1)+n/2*(n/2)=n^2/4+1+n/2
+
+n=2
+1<2
+3<2
+3<2
+
+n=4
+1<4
+  3<4
+  5<4
+3<4
+  3<4
+  5<4
+5<4
+
+b)
+w pętli do-while liczba wykonań jest równa liczbie porównań
+
+#porównań=(zewn. pętla)*(1+wewn. pętla)
+wewn. pętla: n/2
+zewn. pętla: n
+#porównań=n^2/2+n
+
+n=4
+  3<4
+  5<4
+3<8
+  3<4
+  5<4
+5<8
+  3<4
+  5<4
+7<8
+  3<4
+  5<4
+9<8
+
+ć)
+• i=1;
+• wykonuj:
+	• j=1;
+	• wykonuj:
+		• j=j+2;
+	• dopóki (j<2n);
+	• i=i+2;
+• dopóki (i<2n)
+
+#porównań=n^2+n=16+4=20
+
+n=4
+  3<2*4
+  5<2*4
+  7<2*4
+  9<2*4
+3<2*4
+  3<2*4
+  5<2*4
+  7<2*4
+  9<2*4
+5<2*4
+  3<2*4
+  5<2*4
+  7<2*4
+  9<2*4
+7<2*4
+  3<2*4
+  5<2*4
+  7<2*4
+  9<2*4
+9<2*4
+
+c)
+wewn. pętla: n/2
+zewn. pętla: inf
+#porównań = inf
+
+d)
+#porównań=(zewn. pętla)*(1+wewn. pętla)
+n/2*(1+1)=n
+n=4
+
+  3>4
+3<4
+  3>4
+5<4
+

@@ -1,0 +1,12 @@
+printf("\nWierzcholek 1:\n");
+    // dfs(g,0);
+    // printf("\nWierzcholek 2:\n");
+    // dfs(g,1);
+    // printf("\nWierzcholek 3:\n");
+    // dfs(g,2);
+    // printf("\nWierzcholek 4:\n");
+    // dfs(g,3);
+    // printf("\nWierzcholek 5:\n");
+    // dfs(g,4);
+    // printf("\nWierzcholek 6:\n");
+    // dfs(g, 5);
