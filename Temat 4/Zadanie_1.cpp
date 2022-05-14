@@ -84,72 +84,72 @@ void przyklad_4(int liczby[], int lewo, int prawo)
         przyklad_4(liczby, i, prawo);
 }
 
-// int merge(int lewo[], int prawo[])
-// {
-// int sizeP = sizeof(prawo) / sizeof(prawo[0]);
-// int sizeL = sizeof(lewo) / sizeof(lewo[0]);
-// int sizeLP = sizeL = sizeP;
-// int wynik[] = new int[sizeLP];
-// int INDEX_lewy = 0, INDEX_prawy = 0, INDEX_wynik = 0;
-// while (INDEX_lewy < sizeL || INDEX_prawy < sizeP)
-// {
-//     if (INDEX_lewy < sizeL && INDEX_prawy < sizeP)
-//     { 
-//         if (lewo[INDEX_lewy] <= prawo[INDEX_prawy])
-//         {
-//             wynik[INDEX_wynik] = lewo[INDEX_lewy];
-//             INDEX_lewy++;
-//             INDEX_wynik++;
-//         }
-//         else
-//         {
-//             wynik[INDEX_wynik] = prawo[INDEX_prawy];
-//             INDEX_prawy++;
-//             INDEX_wynik++;
-//         }
-//     }
-//     else if (INDEX_lewy < sizeL)
-//     {
-//         wynik[INDEX_wynik] = lewo[INDEX_lewy];
-//         INDEX_lewy++;
-//         INDEX_wynik++;
-//     }
-//     else if (INDEX_prawy < sizeP)
-//     {
-//         wynik[INDEX_wynik] = prawo[INDEX_prawy];
-//         INDEX_prawy++;
-//         INDEX_wynik++;
-//     }
-// }
-// return wynik;
-// }
-
-// void przyklad_5(int liczby[], int size)
-// {
-//     int lewo[] = {};
-//     int prawo[] = {};
-//     int wynik[] = new int[size];
-//     if (size <= 1)
-//         return array.Length; 
-//     int srodek = size / 2;
-//     lewo = new int[srodek];
-//     if (size % 2 == 0)
-//         prawo = new int[srodek];
-//     else
-//         prawo = new int[srodek + 1];
-//     for (int i = 0; i < srodek; i++)
-//         lewo[i] = array[i];
-//     int x = 0;
-//     for (int i = srodek; i < size; i++)
-//     {
-//         prawo[x] = array[i];
-//         x++;
-//     }
-//     lewo = przyklad_5(lewo);
-//     prawo = przyklad_5(prawo);
-//     wynik = merge(lewo, prawo);
-//     return wynik;
-// }
+class przyklad_5
+    {
+        public static int[] mergeSort(int[] array)
+        {
+            int[] lewo;
+            int[] prawo;
+            int[] wynik = new int[array.Length];
+            if (array.Length <= 1)
+                return array; 
+            int srodek = array.Length / 2;
+            lewo = new int[srodek];
+            if (array.Length % 2 == 0)
+                prawo = new int[srodek];
+            else
+                prawo = new int[srodek + 1];
+            for (int i = 0; i < srodek; i++)
+                lewo[i] = array[i];
+            int x = 0;
+            for (int i = srodek; i < array.Length; i++)
+            {
+                prawo[x] = array[i];
+                x++;
+            }
+            lewo = mergeSort(lewo);
+            prawo = mergeSort(prawo);
+            wynik = merge(lewo, prawo);
+            return wynik;
+        }
+        public static int[] merge(int[] lewo, int[] prawo)
+        {
+            int dlugosc = prawo.Length + lewo.Length;
+            int[] wynik = new int[dlugosc];
+            int INDEX_lewy = 0, INDEX_prawy = 0, INDEX_wynik = 0;
+            while (INDEX_lewy < lewo.Length || INDEX_prawy < prawo.Length)
+            {
+                if (INDEX_lewy < lewo.Length && INDEX_prawy < prawo.Length)
+                { 
+                    if (lewo[INDEX_lewy] <= prawo[INDEX_prawy])
+                    {
+                        wynik[INDEX_wynik] = lewo[INDEX_lewy];
+                        INDEX_lewy++;
+                        INDEX_wynik++;
+                    }
+                    else
+                    {
+                        wynik[INDEX_wynik] = prawo[INDEX_prawy];
+                        INDEX_prawy++;
+                        INDEX_wynik++;
+                    }
+                }
+                else if (INDEX_lewy < lewo.Length)
+                {
+                    wynik[INDEX_wynik] = lewo[INDEX_lewy];
+                    INDEX_lewy++;
+                    INDEX_wynik++;
+                }
+                else if (INDEX_prawy < prawo.Length)
+                {
+                    wynik[INDEX_wynik] = prawo[INDEX_prawy];
+                    INDEX_prawy++;
+                    INDEX_wynik++;
+                }
+            }
+            return wynik;
+        }
+    }
 
 void print_array(string note, int liczby[15])
 {
